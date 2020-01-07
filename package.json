@@ -1,0 +1,28 @@
+{
+  "name": "oled-disp",
+  "version": "1.0.0",
+  "description": "\"oled-disp for raspberrypi, support hangul\"",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeyunjai/oled-disp.git"
+  },
+  "keywords": [
+    "ssd1306",
+    "oled",
+    "hangul",
+    "spi"
+  ],
+  "author": "Lee Yunjai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leeyunjai/oled-disp/issues"
+  },
+  "homepage": "https://github.com/leeyunjai/oled-disp#readme"
+}
