@@ -2,7 +2,7 @@
   "name": "oled-disp",
   "version": "1.0.0",
   "description": "\"oled-disp for raspberrypi, support hangul\"",
-  "main": "index.js",
+  "main": "oled-disp.js",
   "directories": {
     "lib": "lib"
   },
