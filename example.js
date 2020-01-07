@@ -1,17 +1,16 @@
-const readline = require('readline');
+//const readline = require('readline');
 const Oled = require('oled-disp');
 const oled = new Oled({ width: 128, height: 64, dcPin: 23, rstPin : 24});
 
 oled.begin(function(){
   oled.clearDisplay();
+  oled.setCursor(1, 1);
+  oled.writeString(2, "안녕,Hi", 2, true);
 });
 
-function oledTest(str){
-  oled.clearDisplay();
-  oled.setCursor(1, 1);
-  oled.writeString(2, str, 2, true);
-}
 
+
+/*
 // Command 
 rl = readline.createInterface(process.stdin, process.stdout);
 rl.on('line', function(chunk){
@@ -20,3 +19,4 @@ rl.on('line', function(chunk){
 }).on('close', function() {
    process.exit(0);
 });
+*/
