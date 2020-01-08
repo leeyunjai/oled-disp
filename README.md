@@ -12,10 +12,20 @@ This is package of oled(ssd1306) for Raspberrypi.
  - drawBitmap()
 
 # Example
+<pre><code>
 const Oled = require('oled-disp');
 
 oled.begin(function(){
   oled.clearDisplay();
-  oled.setCursor(1, 1);
-  oled.writeString(2, "안녕 Hi", 2, true);
 });
+
+// Text example (kor and eng)
+oled.setCursor(1, 1);
+oled.writeString(2, "안녕 Hi", 2, true);
+
+// PNG example (128x64 png only)
+pngtolcd("a.png", false, function(err, bitmap) {
+  oled.buffer = bitmap;
+  oled.update();
+}
+</code></pre>
