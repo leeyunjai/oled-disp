@@ -305,7 +305,6 @@ Oled.prototype._findCharBuf = function(font, c, bH) {
   if(bH){
     var cArr = c.toKorChars();
     var idx = 0;
-
     if(cArr.length == 3){
       cBufPos = font.coda_lookup.indexOf(cArr[2]) * font.width;
       tBuf = font.codaData.slice(cBufPos, cBufPos + font.width);
@@ -317,7 +316,7 @@ Oled.prototype._findCharBuf = function(font, c, bH) {
       idx = 3;
     }
     
-    if(cArr.length > 1){
+    if(cArr.length == 2){
       cBufPos = font.nucleus_lookup.indexOf(cArr[1]) * font.width;
       tBuf = font.nucleusData[0].slice(cBufPos, cBufPos + font.width);
      for(var i=0;i<cBuf.length;i++)cBuf[i]|=tBuf[i];
