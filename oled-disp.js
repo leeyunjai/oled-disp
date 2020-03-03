@@ -313,25 +313,39 @@ Oled.prototype._findCharBuf = function(font, c, bH) {
       cBufPos = font.nucleus_lookup.indexOf(cArr[1]) * font.width;
       tBuf = font.nucleusData[1].slice(cBufPos, cBufPos + font.width);
       for(var i=0;i<cBuf.length;i++)cBuf[i]|=tBuf[i];
-      idx = 3;
+
+      switch(cArr[1]){
+        case 'ㅏ':case 'ㅐ':case 'ㅑ':case 'ㅒ':case 'ㅓ':case 'ㅔ':case 'ㅕ':case 'ㅖ':case 'ㅣ':
+          idx=3;
+          break;
+        case 'ㅗ':case 'ㅛ':case 'ㅜ':case 'ㅠ':case 'ㅡ':
+          idx=4;
+          break;
+        case 'ㅘ':case 'ㅙ':case 'ㅚ':case 'ㅝ':case 'ㅞ':case 'ㅟ':case 'ㅢ':
+          idx=5;
+          break;
+        default:
+          break;
+      }
     }
     
     if(cArr.length == 2){
       cBufPos = font.nucleus_lookup.indexOf(cArr[1]) * font.width;
       tBuf = font.nucleusData[0].slice(cBufPos, cBufPos + font.width);
-     for(var i=0;i<cBuf.length;i++)cBuf[i]|=tBuf[i];
+      for(var i=0;i<cBuf.length;i++)cBuf[i]|=tBuf[i];
 
-     switch(cArr[1]){
-       case 'ㅏ':case 'ㅐ':case 'ㅑ':case 'ㅒ':case 'ㅓ':case 'ㅔ':case 'ㅕ':case 'ㅖ':case 'ㅣ':
-         break;
-       case 'ㅗ':case 'ㅛ':case 'ㅜ':case 'ㅠ':case 'ㅡ':
-         idx+=1;
-         break;
-       case 'ㅘ':case 'ㅙ':case 'ㅚ':case 'ㅝ':case 'ㅞ':case 'ㅟ':case 'ㅢ':
-         idx+=2;
-         break;
-       default:
-         break;
+      switch(cArr[1]){
+        case 'ㅏ':case 'ㅐ':case 'ㅑ':case 'ㅒ':case 'ㅓ':case 'ㅔ':case 'ㅕ':case 'ㅖ':case 'ㅣ':
+          idx=0;
+          break;
+        case 'ㅗ':case 'ㅛ':case 'ㅜ':case 'ㅠ':case 'ㅡ':
+          idx=1;
+          break;
+        case 'ㅘ':case 'ㅙ':case 'ㅚ':case 'ㅝ':case 'ㅞ':case 'ㅟ':case 'ㅢ':
+          idx=2;
+          break;
+        default:
+          break;
       }
     }
 
