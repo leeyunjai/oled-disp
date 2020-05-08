@@ -3,6 +3,8 @@ This is package of oled(ssd1306) for Raspberrypi.
  - support hangul(kor) end eng. (hangul(kor): 8x8, eng : 5x8)
  - only test SPI, 128x64(ssd1306)
 
+![demo](./KakaoTalk_20200508_120135665.jpg)
+
 # Main functions
  - begin
  - clearDisplay
